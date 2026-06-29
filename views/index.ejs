@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 p-10">
+
+<div class="flex justify-between items-center mb-8">
+
+    <h1 class="text-4xl text-white font-bold">
+        Users
+    </h1>
+
+    <a href="/create"
+       class="bg-blue-600 text-white px-5 py-2 rounded">
+        Create User
+    </a>
+
+</div>
+
+<div class="flex flex-wrap gap-8">
+
+<% users.forEach(function(user){ %>
+
+<div class="w-80 bg-zinc-800 rounded-xl p-4">
+
+    <div class="h-52 bg-zinc-600 rounded-lg"></div>
+
+    <div class="mt-5">
+
+        <h2 class="text-white text-2xl">
+            <%= user.name %>
+        </h2>
+        <p class="text-zinc-400">
+            <%= user.username %>
+        </p>
+
+        <p class="text-zinc-400">
+            <%= user.email %>
+        </p>
+
+    </div>
+
+    <div class="mt-6 flex gap-6 justify-between">
+
+        <a href="/edit/<%= user._id %>" class="text-white">
+        Edit User
+        </a>
+
+        <a href="/delete/<%= user._id %>" class="text-red-500">
+         Delete User
+        </a>
+
+    </div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</body>
+</html>
