@@ -23,12 +23,13 @@ app.get("/create", (req, res) => {
 
 // Create User
 app.post("/create", async (req, res) => {
-    const { name, username, email } = req.body;
+    const { name, username, email,image } = req.body;
 
     await User.create({
         name,
         username,
-        email
+        email,
+        image
     });
 
     res.redirect("/");
@@ -46,11 +47,11 @@ app.get("/edit/:id", async (req, res) => {
 // Update User
 app.post("/update/:id", async (req, res) => {
 
-    const { name, username, email } = req.body;
+    const { name, image, email } = req.body;
 
     await User.findByIdAndUpdate(req.params.id, {
         name,
-        username,
+        image,
         email
     });
 

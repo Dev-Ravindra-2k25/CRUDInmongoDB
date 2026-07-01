@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     name: String,
     username: String,
     email: String,
-    contact:String,
+    image:String,
 });
 //                      User is model..without that 
 //no operation like find,delete...can be performed  
